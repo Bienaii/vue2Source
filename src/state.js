@@ -12,9 +12,11 @@ export function initState(vm) {
 function proxy(vm, target, key) {
   Object.defineProperty(vm, key, {
     get() {
+      // console.log('get');
       return vm[target][key] // vm._data.name
     },
     set(newValue) {
+      // console.log('set');
       vm[target][key] = newValue
     }
   })
